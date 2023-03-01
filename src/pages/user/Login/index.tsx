@@ -15,9 +15,10 @@ import {
   ProFormCheckbox,
   ProFormText,
 } from '@ant-design/pro-components';
-import { Alert, message, Tabs } from 'antd';
+import { Alert, message, Space, Tabs } from 'antd';
+import { Divider } from 'antd';
 import React, { useState } from 'react';
-import { FormattedMessage, history, SelectLang, useIntl, useModel } from 'umi';
+import { FormattedMessage, history, Link, SelectLang, useIntl, useModel } from 'umi';
 import styles from './index.less';
 
 const LoginMessage: React.FC<{
@@ -176,9 +177,12 @@ const Login: React.FC = () => {
               marginBottom: 24,
             }}
           >
+            <Space split = {<Divider type = "vertical"/>} >
             <ProFormCheckbox noStyle name="autoLogin">
               <FormattedMessage id="pages.login.rememberMe" defaultMessage="自动登录" />
             </ProFormCheckbox>
+            {/* <Divider type = "vertical"/> */}
+            <Link to="/user/register">User Register</Link>
             <a
               style={{
                 float: 'right',
@@ -186,6 +190,7 @@ const Login: React.FC = () => {
             >
               <FormattedMessage id="pages.login.forgotpassword" defaultMessage="忘记密码" />
             </a>
+            </Space>
           </div>
         </LoginForm>
       </div>
