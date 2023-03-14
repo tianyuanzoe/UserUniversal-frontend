@@ -44,7 +44,7 @@ export async function getInitialState(): Promise<{
     try {
       return await queryCurrentUser();
     } catch (error) {
-     // history.push(loginPath);
+      //history.push(loginPath);
     }
     return undefined;
   };
